@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>用户登录 - <?=config('APP_TITLE')?></title>
+		<link rel="stylesheet" href="./css/style.css" />
+		<style type="text/css">
+			.top{
+    		border-bottom: .5rem solid #8c84d5;
+    	}
+    	.top-nav a.curr{
+    		background: linear-gradient(to top right,#ff8eb2,#487eeb);
+    	}
+    	.top-nav a:hover{
+    		background-color:#d68abe;
+    		opacity: 0.8;
+    	}
+    	.ui-btn{
+    		background-color:#d68abe;
+    	}
+    	.ui-btn:hover{
+    		background-color:#ff8eb2;
+    	}
+			.top-right{
+    		padding-right: 2rem;
+    	}
+		</style>
+	</head>
+	<body>
+		<?php require './view/common/top.html'; ?>
+		<div class="main container">
+			<div class="box">
+				<div class="box-title"><span>趣PHP 账号登录</span><a href="register.php">还没有账号？马上注册</a></div>
+				<div class="box-wp">
+					<form method="post">
+						<table class="box-account">
+							<tr><th>用户名</th>
+								<td><input type="text" name="name"></td>
+							</tr>
+							<tr><th>密码</th>
+								<td><input type="password" name="password"></td>
+							</tr>
+							 <tr><th>验证码</th><td><input type="text" name="captcha" placeholder="输入下图中的文字"</td></tr>
+      						 <tr><th></th><td><img class="captcha js-captcha" src="captcha.php" title="点击刷新验证码"</td></tr>
+							<tr><th></th><td class="box-account-ck"><label><input type="checkbox" name="auto" value="1">记住登录状态</label></td></tr>
+							<tr><td class="box-account-act" colspan="2"><label><input class="ui-btn" type="submit" value="登录"></label></td></tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+		<?php require './view/common/footer.html'; ?>
+	</body>
+</html>
